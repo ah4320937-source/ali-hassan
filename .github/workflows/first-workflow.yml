@@ -1,0 +1,11 @@
+main: Frist Workflow
+on: workflow_dispatch
+jobs:
+  first-job:
+  runs-on: ubuntu-latest
+	steps:
+		- name: Hello Gihub Action
+      run: echo "Hello this is first wokflow in git hub action" 
+		- name: Bye Gihub Action
+		  run: echo "Bye this is first wokflow in git hub action" 
+			
