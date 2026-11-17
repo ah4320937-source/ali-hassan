@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v6
 
       - name: Validate html file
         run: test -f index.html
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v6
 
       - name: Validate js file
         run: test -f script.js
@@ -25,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: get-repo-code
-        uses: actions/checkout@v7
+        uses: actions/checkout@v6
 
       - name: Validate code file
-        run: test --check script.js
+        run: node -c script.js
 
       - name: Validate code file
         run: npx htmlhint index.html
