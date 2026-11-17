@@ -1,8 +1,8 @@
-name: Jobes Best
+name: Jobes Test
 
 on:
   workflow_run:
-    workflows: ["First Workflow"]
+    workflows: ["my Workflow"]
     types:
       - completed
 
