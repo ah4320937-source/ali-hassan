@@ -1,0 +1,34 @@
+name: Jobes Best
+
+on: push
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v7
+
+      - name: Validate html file
+        run: test -f index.html
+
+  validate-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v7
+
+      - name: Validate js file
+        run: test -f script.js
+  validate-code:
+    needs: [validate-html, validate-js]
+    runs-on: ubuntu-latest
+    steps:
+      - name: get-repo-code
+        uses: actions/checkout@v7
+
+      - name: Validate code file
+        run: test --check script.js
+
+      - name: Validate code file
+        run: npx htmlhint index.html
